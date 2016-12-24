@@ -5,25 +5,45 @@ namespace stalavitski\YiiEnvironmentTest;
  * @name EnvironmentTest
  * @author Artsem Stalavitski
  *
- * Simple class used to set configuration and debugging depending on environment.
- * Using this you can predefine configurations for use in different environments,
- * like _development, testing, staging and production_.
+ * Extension of \marcovtwout\YiiEnvironment\Environment class
+ * @link https://github.com/marcovtwout/yii-environment by @author Marco van 't Wout
+ * Added separated configs: configTest and configTestBootstrap for unit and functional testing
  *
- * Class EnvironmentCustom
+ * Class EnvironmentTest
  * @package stalavitski\YiiTestEnvironment
  */
 class EnvironmentTest extends \marcovtwout\YiiEnvironment\Environment
 {
     /**
-     * Set config dir.
-     * @param string $configDir
+     * @var array web config array
      */
-    protected function setConfigDir($configDir)
+    public $configTest;
+
+    /**
+     * @var array console config array
+     */
+    public $configTestBootstrap;
+
+    /**
+     * Sets the environment and configuration for the selected mode.
+     */
+    protected function setEnvironment()
     {
-        if ($configDir !== null) {
-            $this->configDir = rtrim($configDir, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
+        $config = $this->getConfig();
+        parent::setEnvironment();
+
+        if(isset($config['configTest'])) {
+            $this->configTest = $config['configTest'];
+            $this->configTest['params']['environment'] = strtolower($this->mode);
         } else {
-            $this->configDir = __DIR__ . '/../../config/';
+            $this->configTest = $this->configWeb;
+        }
+
+        if(isset($config['configTestBootstrap'])) {
+            $this->configTestBootstrap = $config['configTestBootstrap'];
+            $this->configTestBootstrap['params']['environment'] = strtolower($this->mode);
+        } else {
+            $this->configTestBootstrap = $this->configConsole;
         }
     }
 }
