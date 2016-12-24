@@ -1,6 +1,5 @@
 <?php
 namespace stalavitski\YiiEnvironmentTest;
-require_once('marcovtwout\YiiEnvironment\Environment.php');
 
 /**
  * @name EnvironmentTest
@@ -13,7 +12,7 @@ require_once('marcovtwout\YiiEnvironment\Environment.php');
  * Class EnvironmentCustom
  * @package stalavitski\YiiTestEnvironment
  */
-class EnvironmentTest extends marcovtwout\YiiEnvironment\Environment
+class EnvironmentTest extends \marcovtwout\YiiEnvironment\Environment
 {
     /**
      * Set config dir.
