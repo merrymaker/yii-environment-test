@@ -3,7 +3,7 @@ namespace stalavitski\YiiEnvironmentTest;
 require_once('marcovtwout\YiiEnvironment\Environment.php');
 
 /**
- * @name YiiEnvironmentTest
+ * @name EnvironmentTest
  * @author Artsem Stalavitski
  *
  * Simple class used to set configuration and debugging depending on environment.
@@ -13,7 +13,7 @@ require_once('marcovtwout\YiiEnvironment\Environment.php');
  * Class EnvironmentCustom
  * @package stalavitski\YiiTestEnvironment
  */
-class YiiEnvironmentTest extends marcovtwout\YiiEnvironment\Environment
+class EnvironmentTest extends marcovtwout\YiiEnvironment\Environment
 {
     /**
      * Set config dir.
