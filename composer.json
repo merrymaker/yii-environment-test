@@ -16,21 +16,10 @@
     }
   ],
   "support": {
-    //"issues": "https://github.com/marcovtwout/yii-environment/issues?state=open",
     "source": "https://github.com/stalavitski/yii-environment-test"
   },
   "require": {
     "php": ">=5.3",
     "marcovtwout/yii-environment": ">=1.1"
   }
-  /*"autoload": {
-    "psr-4": {
-      "marcovtwout\\YiiEnvironment\\": ""
-    }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "5.0.x-dev"
-    }
-  }*/
 }
