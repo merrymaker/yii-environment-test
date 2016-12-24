@@ -20,6 +20,6 @@
   },
   "require": {
     "php": ">=5.3",
-    "marcovtwout/yii-environment": ">=1.1"
+    "marcovtwout/yii-environment": "4.*"
   }
 }
